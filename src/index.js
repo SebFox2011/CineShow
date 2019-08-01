@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
 
-import App from './components/app';
+import App from './containers/app.js';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -12,7 +12,8 @@ const POPULAR_MOVIES_URL = "discover/movie?language=fr&sort_by=popularity.desc&i
 const API_KEY = "1a9538af85dc38a3b2ecc64c859fda68";
 
 ReactDOM.render(
- <Provider store={createStoreWithMiddleware(reducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>  
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+    <Provider
+        store={createStoreWithMiddleware(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
+        <App/>
+    </Provider>
+    , document.querySelector('.container'));
