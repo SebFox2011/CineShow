@@ -4,11 +4,11 @@
 }
 
 li:hover{
-    background-color: aqua;
+    background-color: rgba(139, 221, 255, 0.21);
 }
 
 .title_list_item{
     padding-top: 40px;
-    text-align: center;
+    text-align:center;
 }
 
