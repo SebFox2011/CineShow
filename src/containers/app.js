@@ -22,7 +22,10 @@ class App extends Component {
 
     initMovies() {
         axios.get(`${API_END_POINT}${POPULAR_MOVIE_URL}&${API_KEY}`).then(function (response) {
-            this.setState({movieList: response.data.results.slice(1, 6), currentMovie: response.data.results[0]},function (){
+            this.setState({
+                movieList: response.data.results.slice(1, 6),
+                currentMovie: response.data.results[0]
+            }, function () {
                 this.applyVideoToCurrentMovie();
             });
 
@@ -37,7 +40,7 @@ class App extends Component {
             let newCurrentMovieState = this.state.currentMovie;
             newCurrentMovieState.videoId = youtubeKey;
             //console.log(youtubeKey);
-            this.setState({currentMovie:newCurrentMovieState});
+            this.setState({currentMovie: newCurrentMovieState});
             console.log(this.state);
         }.bind(this));
 
@@ -53,10 +56,20 @@ class App extends Component {
         return (
 
             <div>
-                <SearchBar/>
-                {renderVideoList()}
-                <Video videoId={this.state.currentMovie.videoId}/>
-                <VideoDetail title={this.state.currentMovie.title} description={this.state.currentMovie.overview}/>
+                <div className="search_bar">
+                    <SearchBar/>
+                </div>
+                <div className="row">
+                    <div className="col-md-8">
+                        <Video videoId={this.state.currentMovie.videoId}/>
+                        <VideoDetail title={this.state.currentMovie.title}
+                                     description={this.state.currentMovie.overview}/>
+                    </div>
+                    <div className="col-md-4">
+                        {renderVideoList()}
+                    </div>
+                </div>
+
             </div>
         );
     }
