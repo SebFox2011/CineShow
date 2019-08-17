@@ -13,14 +13,13 @@ const VideoListItem = (props) => {
             </div>
 
             <div className="media-body">
-                <h5 className="title_list_item">{movie.title} id: {movie.id}</h5>
-                <p>Note moyenne: {movie.vote_average}</p>
+                <h5 className="title_list_item">{movie.title}</h5>
+                <p className="average">Note moyenne: {movie.vote_average}</p>
             </div>
         </div>
     </li>
 
     function handleOnClick (){
-        console.log('click',movie);
         props.callback(movie);
     }
 };

@@ -4,11 +4,14 @@
 }
 
 li:hover{
-    background-color: rgba(139, 221, 255, 0.21);
+    background-color: rgb(230, 230, 230);
 }
 
 .title_list_item{
-    padding-top: 40px;
+    padding-top: 0px;
+    text-align:center;
+}
+.average{
     text-align:center;
 }
 

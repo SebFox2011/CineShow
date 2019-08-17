@@ -5,7 +5,7 @@ const BASE_URL = "https://www.youtube.com/embed/";
 const Video = ({videoId}) => {
     return (
         <div className="embed-responsive embed-responsive-16by9">
-            <iframe className="embed-responsive-item" src={`${BASE_URL}${videoId}`} frameborder="0"></iframe>
+            <iframe className="embed-responsive-item" src={`${BASE_URL}${videoId}`} frameBorder="0"></iframe>
         </div>
     )
 };
